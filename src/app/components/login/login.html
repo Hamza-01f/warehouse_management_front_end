@@ -1,0 +1,7 @@
+<p>login works!</p>
+<input placeholder="enter your email" [(ngModel)] = "username">
+<br>
+<input placeholder="enter your password" type="password" [(ngModel)] = "password">
+<button (click) = "login()">submit</button>
+<p *ngIf = "errorMessage">{{errorMessage}}</p>
+
