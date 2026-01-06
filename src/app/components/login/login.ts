@@ -12,17 +12,36 @@ import { CommonModule } from '@angular/common';
   styleUrl: './login.scss',
 })
 export class Login {
-  username: string = '';
+
+  email: string = '';
   password: string = '';
-  errorMessage: string = '';
+  message: string = '';
   loading: boolean = false;
+  isError: boolean = false;;
 
   constructor(private authService: AuthService ,
               private router: Router
   ){}
 
   login(){
+
       this.loading = true;
-      this.errorMessage = '';
+      this.message = '';
+      this.isError = false;
+
+      this.authService.login(this.email , this.password).subscribe({
+
+        next: (res) => {
+          localStorage.setItem('access_token' , res.token);
+          this.message = 'You logged In with success ! ';
+          this.router.navigate(['/dashboard'])
+        },
+
+        error: () => {
+          this.isError = true;
+          this.message = 'Invalid Credentials ! ';
+          this.loading = false;
+        }
+      })
   }
 }
