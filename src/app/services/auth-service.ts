@@ -2,21 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoginRequest } from '../model/login-request.model';
-import { Register } from '../components/register/register';
 import { Router } from '@angular/router';
-import { User } from '../model/user.model';
-
-
-interface LoginResponse{
-  token: string;
-}
-
-interface RegisterResponse{
-  firstName: string;
-  lastName: string;
-  email: string;
-  role: number;
-}
+import { User } from '../model/register-request.model';
 
 @Injectable({
   providedIn: 'root',
