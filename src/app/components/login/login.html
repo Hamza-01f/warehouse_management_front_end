@@ -1,9 +1,17 @@
-<p>login works!</p>
-<p *ngIf = "isError">{{message}}</p>
-<br>
-<input placeholder="enter your email" [(ngModel)] = "email">
-<br>
-<input placeholder="enter your password" [(ngModel)] = "password">
-<br>
-<button (click) = "login()">submit</button>
+<h1>Login</h1>
+<form>
+    <label>Username</label>
+    <input type="text" placeholder="enter your email" [(ngModel)] = "email" name="email">
+    
+    <label>Password</label>
+    <input placeholder="enter your password" [(ngModel)] = "password" name="password">
+
+    <button type="button" (click) = "login()">
+        Login
+    </button>
+
+</form>
+<p *ngIf="message" [ngStyle]="{color : isError ? 'red' : 'green'}">
+    {{message}}
+</p>
 

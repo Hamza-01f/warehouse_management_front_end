@@ -1,11 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LoginRequest } from '../model/login-request.model';
 
 
 interface LoginResponse{
   token: string;
 }
+
 @Injectable({
   providedIn: 'root',
 })
@@ -15,12 +17,8 @@ export class AuthService {
 
   constructor(private http: HttpClient){}
 
-  login(email: string, password: string): Observable<LoginResponse> {
-    console.log("i am in the service");
-    return this.http.post<LoginResponse>(this.API_URL, {
-      email,
-      password
-    });
+  login(request: LoginRequest): Observable<LoginResponse> {
+    return this.http.post<LoginResponse>(this.API_URL, request);
   }
 
   logout(){
@@ -29,5 +27,9 @@ export class AuthService {
 
   isAuthenticated(): boolean{
       return !! localStorage.getItem('access_token');
+  }
+
+  register(){
+
   }
 }

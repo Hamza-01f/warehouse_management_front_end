@@ -29,7 +29,7 @@ export class Login {
       this.message = '';
       this.isError = false;
 
-      this.authService.login(this.email , this.password).subscribe({
+      this.authService.login({email: this.email , password: this.password}).subscribe({
 
         next: (res) => {
           localStorage.setItem('access_token' , res.token);
@@ -40,7 +40,7 @@ export class Login {
         error: () => {
           this.isError = true;
           this.message = 'Invalid Credentials ! ';
-          this.loading = false;
+          this.loading = false;  
         }
       })
   }
