@@ -1,9 +1,4 @@
-export class LoginRequest{
+export interface LoginRequest{
     email: string;
     password: string;
-
-    constructor(){
-        this.email = '';
-        this.password = '';
-    }
 }
