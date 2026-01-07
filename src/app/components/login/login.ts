@@ -19,8 +19,9 @@ export class Login {
   loading: boolean = false;
   isError: boolean = false;;
 
-  constructor(private authService: AuthService ,
-              private router: Router
+  constructor(
+    private authService: AuthService ,
+    private router: Router
   ){}
 
   login(){
@@ -29,12 +30,15 @@ export class Login {
       this.message = '';
       this.isError = false;
 
-      this.authService.login({email: this.email , password: this.password}).subscribe({
+      this.authService.login({
+        email: this.email ,
+         password: this.password
+        }).subscribe({
 
         next: (res) => {
           localStorage.setItem('access_token' , res.token);
           this.message = 'You logged In with success ! ';
-          this.router.navigate(['/dashboard'])
+          this.router.navigate(['/dashboard/admin'])
         },
 
         error: () => {
