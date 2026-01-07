@@ -1,17 +1,34 @@
-<h1>Login</h1>
-<form>
-    <label>Username</label>
-    <input type="text" placeholder="enter your email" [(ngModel)] = "email" name="email">
-    
-    <label>Password</label>
-    <input placeholder="enter your password" [(ngModel)] = "password" name="password">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="login.scss">
+</head>
+<body>
 
-    <button type="button" (click) = "login()">
-        Login
-    </button>
+  <div class="auth-container">
+    <div class="auth-card">
+      <h1>Welcome Back</h1>
+      <p class="subtitle">Login to your account</p>
 
-</form>
-<p *ngIf="message" [ngStyle]="{color : isError ? 'red' : 'green'}">
-    {{message}}
-</p>
+      <form>
+        <div class="form-group">
+          <label>Email</label>
+          <input [(ngModel)]="email" name="email" type="email" placeholder="Enter your email" >
+        </div>
 
+        <div class="form-group">
+          <label>Password</label>
+          <input [(ngModel)]="password" name="password" type="password" placeholder="Enter your password" >
+        </div>
+
+        <button type="button" class="btn-primary" (click)="login()">Login</button>
+      </form>
+
+      
+    </div>
+  </div>
+
+</body>
+</html>
