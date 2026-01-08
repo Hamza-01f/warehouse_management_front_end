@@ -5,6 +5,7 @@ import { Register } from './features/auth/register/register';
 import { AdminDashboard } from './features/dashboard/admin/admin';
 import { ClientDashboard } from './features/dashboard/client/client';
 import { WarehouseManagerDashboard } from './features/dashboard/warehouse-manager/warehouse-manager';
+import { Logout } from './features/auth/logout/logout';
 
 export const routes: Routes = [
     {
@@ -29,5 +30,9 @@ export const routes: Routes = [
     },
     {
         path : 'register' , component : Register
+    },
+    {
+        path : 'logout',
+        component : Logout
     }
 ];

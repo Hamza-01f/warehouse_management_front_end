@@ -10,6 +10,12 @@ export const adminRoutes: Routes = [
      component : AdminDashboard,
      children : [
         {
+          path : '',
+          loadComponent : () => 
+            import('./home/home')
+            .then( m => m.AdminHome)
+        },
+        {
             path : 'products',
             loadComponent : () => 
                 import('./children/products/products')
