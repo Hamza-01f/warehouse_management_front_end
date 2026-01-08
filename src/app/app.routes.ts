@@ -15,18 +15,17 @@ export const routes: Routes = [
     },
     {
         path : 'dashboard/admin',
-        component : AdminDashboard ,
-        children : []
+        loadChildren: () => 
+            import('./features/dashboard/admin/admin.routes')
+            .then(m => m.adminRoutes)
     },
     {
         path : 'dashboard/manager',
         component : WarehouseManagerDashboard,
-        children : []
     },
     {
         path : 'dashboard/client',
         component : ClientDashboard,
-        children : []
     },
     {
         path : 'register' , component : Register

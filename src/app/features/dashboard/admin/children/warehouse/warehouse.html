@@ -1,0 +1,245 @@
+
+<!-- warehouses.component.html -->
+<div class="warehouses-page">
+  <div class="page-header">
+    <div class="header-content">
+      <h1 class="page-title">Warehouses</h1>
+      <p class="page-subtitle">Manage warehouse locations and facilities</p>
+    </div>
+    <button class="btn btn-primary" >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+      </svg>
+      Add Warehouse
+    </button>
+  </div>
+
+  <!-- Search and Filter Bar -->
+  <div class="filter-bar">
+    <div class="search-box">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+      </svg>
+      <input type="text" placeholder="Search warehouses..." >
+    </div>
+    <div class="filter-actions">
+      <button class="btn btn-outline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+        </svg>
+        Map View
+      </button>
+      <button class="btn btn-outline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+        </svg>
+        Export
+      </button>
+    </div>
+  </div>
+
+  <!-- Warehouses Grid -->
+  <div class="warehouses-grid">
+    <div class="warehouse-card" *ngFor="let warehouse of warehouses">
+      <div class="card-header">
+        <div class="warehouse-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+          </svg>
+        </div>
+        <div class="card-actions">
+          <button class="action-btn" >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            </svg>
+          </button>
+          <button class="action-btn" >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+            </svg>
+          </button>
+          <button class="action-btn delete" >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <div class="card-body">
+        <h3 class="warehouse-name">{{ warehouse.name }}</h3>
+        <div class="warehouse-address">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          <span>{{ warehouse.address }}</span>
+        </div>
+        
+        <div class="warehouse-stats">
+          <div class="stat-item">
+            <div class="stat-icon stat-icon-blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <div class="stat-value">{{ warehouse.totalProducts || 0 }}</div>
+              <div class="stat-label">Products</div>
+            </div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-icon stat-icon-green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <div class="stat-value">{{ warehouse.capacity || 0 }}</div>
+              <div class="stat-label">Capacity</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- <div class="card-footer">
+        <span class="status-badge" [ngClass]="warehouse.status">
+          <span class="status-dot"></span>
+          {{ warehouse.status }}
+        </span>
+        <span class="warehouse-id">#{{ warehouse.id }}</span>
+      </div> -->
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <div class="pagination-info">
+      Showing 1 to 12 of 24 warehouses
+    </div>
+    <div class="pagination-controls">
+      <button class="page-btn" disabled>
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Add/Edit Warehouse Modal -->
+<div class="modal" >
+  <div class="modal-backdrop" ></div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Add New Warehouse</h2>
+      <button class="close-btn" >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form class="warehouse-form">
+        <div class="form-group">
+          <label for="warehouseName">Warehouse Name</label>
+          <input 
+            id="warehouseName"
+            type="text" 
+            placeholder="Enter warehouse name" 
+            name="name"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="warehouseAddress">Full Address</label>
+          <textarea 
+            id="warehouseAddress"
+            placeholder="Enter complete warehouse address" 
+            rows="3"
+            name="address"
+          ></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="warehouseCapacity">Storage Capacity</label>
+            <input 
+              id="warehouseCapacity"
+              type="number" 
+              placeholder="0" 
+              name="capacity"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="warehouseStatus">Status</label>
+            <select id="warehouseStatus" name="status">
+              <option value="">Select status</option>
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+              <option value="maintenance">Maintenance</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="warehouseCity">City</label>
+            <input 
+              id="warehouseCity"
+              type="text" 
+              placeholder="City" 
+              name="city"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="warehouseCountry">Country</label>
+            <input 
+              id="warehouseCountry"
+              type="text" 
+              placeholder="Country" 
+              name="country"
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="warehouseManager">Warehouse Manager</label>
+          <select id="warehouseManager"  name="manager">
+            <option value="">Select manager</option>
+            <option value="1">John Smith</option>
+            <option value="2">Sarah Johnson</option>
+            <option value="3">Michael Brown</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="warehouseNotes">Additional Notes</label>
+          <textarea 
+            id="warehouseNotes"
+            placeholder="Any additional information about this warehouse" 
+            rows="3"
+            name="notes"
+          ></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" >Cancel</button>
+      <button class="btn btn-primary" >
+        Add Warehouse
+      </button>
+    </div>
+  </div>
+</div>

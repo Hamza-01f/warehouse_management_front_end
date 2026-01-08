@@ -1,0 +1,403 @@
+<!-- dashboard-main.component.html -->
+<div class="dashboard-main">
+  <!-- Welcome Banner -->
+  <div class="welcome-banner">
+    <div class="welcome-content">
+      <h1 class="welcome-title">Welcome back, Admin! 👋</h1>
+      <p class="welcome-text">Here's what's happening with your warehouse operations today</p>
+    </div>
+    <div class="welcome-actions">
+      <button class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+        </svg>
+        New Order
+      </button>
+      <button class="btn btn-outline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+        Reports
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Stats Grid -->
+  <div class="stats-grid">
+    <div class="stat-card stat-card-primary">
+      <div class="stat-header">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+        </div>
+        <div class="stat-label">Total Products</div>
+      </div>
+      <div class="stat-value">1,284</div>
+      <div class="stat-footer">
+        <span class="stat-change positive">
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"/>
+          </svg>
+          12.5% from last month
+        </span>
+      </div>
+    </div>
+
+    <div class="stat-card stat-card-success">
+      <div class="stat-header">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+          </svg>
+        </div>
+        <div class="stat-label">Active Orders</div>
+      </div>
+      <div class="stat-value">847</div>
+      <div class="stat-footer">
+        <span class="stat-change positive">
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"/>
+          </svg>
+          8.2% from last month
+        </span>
+      </div>
+    </div>
+
+    <div class="stat-card stat-card-purple">
+      <div class="stat-header">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+          </svg>
+        </div>
+        <div class="stat-label">Warehouses</div>
+      </div>
+      <div class="stat-value">24</div>
+      <div class="stat-footer">
+        <span class="stat-change neutral">
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+          </svg>
+          No change
+        </span>
+      </div>
+    </div>
+
+    <div class="stat-card stat-card-orange">
+      <div class="stat-header">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+        </div>
+        <div class="stat-label">Total Users</div>
+      </div>
+      <div class="stat-value">3,456</div>
+      <div class="stat-footer">
+        <span class="stat-change positive">
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"/>
+          </svg>
+          18.7% from last month
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secondary Stats -->
+  <div class="secondary-stats">
+    <div class="stat-item">
+      <div class="stat-icon-small stat-icon-blue">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
+        </svg>
+      </div>
+      <div class="stat-info">
+        <div class="stat-value-small">156</div>
+        <div class="stat-label-small">Suppliers</div>
+      </div>
+    </div>
+
+    <div class="stat-item">
+      <div class="stat-icon-small stat-icon-green">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+        </svg>
+      </div>
+      <div class="stat-info">
+        <div class="stat-value-small">2,341</div>
+        <div class="stat-label-small">Shipments</div>
+      </div>
+    </div>
+
+    <div class="stat-item">
+      <div class="stat-icon-small stat-icon-yellow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+      <div class="stat-info">
+        <div class="stat-value-small">48</div>
+        <div class="stat-label-small">Pending Orders</div>
+      </div>
+    </div>
+
+    <div class="stat-item">
+      <div class="stat-icon-small stat-icon-red">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+        </svg>
+      </div>
+      <div class="stat-info">
+        <div class="stat-value-small">12</div>
+        <div class="stat-label-small">Low Stock Alerts</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts and Activity -->
+  <div class="content-grid">
+    <!-- Chart Section -->
+    <div class="content-card chart-card">
+      <div class="card-header">
+        <div class="header-left">
+          <h2 class="card-title">Revenue Overview</h2>
+          <p class="card-subtitle">Monthly revenue trends</p>
+        </div>
+        <div class="header-actions">
+          <select class="time-selector">
+            <option>Last 7 days</option>
+            <option>Last 30 days</option>
+            <option>Last 3 months</option>
+            <option>Last year</option>
+          </select>
+        </div>
+      </div>
+      <div class="chart-container">
+        <div class="chart-placeholder">
+          <svg viewBox="0 0 400 200" fill="none">
+            <path d="M0 180 L50 160 L100 140 L150 120 L200 100 L250 90 L300 70 L350 50 L400 30" stroke="#2563eb" stroke-width="3" fill="none"/>
+            <circle cx="0" cy="180" r="4" fill="#2563eb"/>
+            <circle cx="50" cy="160" r="4" fill="#2563eb"/>
+            <circle cx="100" cy="140" r="4" fill="#2563eb"/>
+            <circle cx="150" cy="120" r="4" fill="#2563eb"/>
+            <circle cx="200" cy="100" r="4" fill="#2563eb"/>
+            <circle cx="250" cy="90" r="4" fill="#2563eb"/>
+            <circle cx="300" cy="70" r="4" fill="#2563eb"/>
+            <circle cx="350" cy="50" r="4" fill="#2563eb"/>
+            <circle cx="400" cy="30" r="4" fill="#2563eb"/>
+          </svg>
+        </div>
+        <div class="chart-stats">
+          <div class="chart-stat">
+            <div class="stat-dot stat-dot-blue"></div>
+            <span>Revenue: $124,563</span>
+          </div>
+          <div class="chart-stat">
+            <div class="stat-dot stat-dot-green"></div>
+            <span>Target: $150,000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="content-card activity-card">
+      <div class="card-header">
+        <h2 class="card-title">Recent Activities</h2>
+        <button class="btn-text">View All</button>
+      </div>
+      <div class="activity-list">
+        <div class="activity-item">
+          <div class="activity-icon activity-icon-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+            </svg>
+          </div>
+          <div class="activity-content">
+            <div class="activity-text">New product <strong>Dell Laptop XPS</strong> added</div>
+            <div class="activity-time">2 minutes ago</div>
+          </div>
+        </div>
+
+        <div class="activity-item">
+          <div class="activity-icon activity-icon-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div class="activity-content">
+            <div class="activity-text">Order <strong>#ORD-2847</strong> completed</div>
+            <div class="activity-time">15 minutes ago</div>
+          </div>
+        </div>
+
+        <div class="activity-item">
+          <div class="activity-icon activity-icon-purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </div>
+          <div class="activity-content">
+            <div class="activity-text">New user <strong>John Smith</strong> registered</div>
+            <div class="activity-time">1 hour ago</div>
+          </div>
+        </div>
+
+        <div class="activity-item">
+          <div class="activity-icon activity-icon-orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+            </svg>
+          </div>
+          <div class="activity-content">
+            <div class="activity-text">Low stock alert for <strong>HP Monitor</strong></div>
+            <div class="activity-time">3 hours ago</div>
+          </div>
+        </div>
+
+        <div class="activity-item">
+          <div class="activity-icon activity-icon-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+            </svg>
+          </div>
+          <div class="activity-content">
+            <div class="activity-text">Shipment <strong>#SHP-9182</strong> delivered</div>
+            <div class="activity-time">5 hours ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="bottom-grid">
+    <!-- Top Products -->
+    <div class="content-card">
+      <div class="card-header">
+        <h2 class="card-title">Top Products</h2>
+        <button class="btn-text">View All</button>
+      </div>
+      <div class="products-list">
+        <div class="product-item">
+          <div class="product-info">
+            <div class="product-icon">📦</div>
+            <div class="product-details">
+              <div class="product-name">Dell Laptop XPS 15</div>
+              <div class="product-category">Electronics</div>
+            </div>
+          </div>
+          <div class="product-stats">
+            <div class="product-value">$1,299</div>
+            <div class="product-sales">234 sold</div>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-info">
+            <div class="product-icon">🖥️</div>
+            <div class="product-details">
+              <div class="product-name">HP Monitor 27"</div>
+              <div class="product-category">Electronics</div>
+            </div>
+          </div>
+          <div class="product-stats">
+            <div class="product-value">$349</div>
+            <div class="product-sales">189 sold</div>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-info">
+            <div class="product-icon">⌨️</div>
+            <div class="product-details">
+              <div class="product-name">Mechanical Keyboard</div>
+              <div class="product-category">Accessories</div>
+            </div>
+          </div>
+          <div class="product-stats">
+            <div class="product-value">$129</div>
+            <div class="product-sales">156 sold</div>
+          </div>
+        </div>
+
+        <div class="product-item">
+          <div class="product-info">
+            <div class="product-icon">🖱️</div>
+            <div class="product-details">
+              <div class="product-name">Wireless Mouse</div>
+              <div class="product-category">Accessories</div>
+            </div>
+          </div>
+          <div class="product-stats">
+            <div class="product-value">$49</div>
+            <div class="product-sales">142 sold</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Warehouse Status -->
+    <div class="content-card">
+      <div class="card-header">
+        <h2 class="card-title">Warehouse Status</h2>
+        <button class="btn-text">View All</button>
+      </div>
+      <div class="warehouse-list">
+        <div class="warehouse-item">
+          <div class="warehouse-info">
+            <div class="warehouse-name">Rabat Central</div>
+            <div class="warehouse-location">Agdal, Rabat</div>
+          </div>
+          <div class="warehouse-capacity">
+            <div class="capacity-bar">
+              <div class="capacity-fill" style="width: 78%"></div>
+            </div>
+            <div class="capacity-text">78% Full</div>
+          </div>
+        </div>
+
+        <div class="warehouse-item">
+          <div class="warehouse-info">
+            <div class="warehouse-name">Casablanca Hub</div>
+            <div class="warehouse-location">Ain Sebaa, Casablanca</div>
+          </div>
+          <div class="warehouse-capacity">
+            <div class="capacity-bar">
+              <div class="capacity-fill" style="width: 62%"></div>
+            </div>
+            <div class="capacity-text">62% Full</div>
+          </div>
+        </div>
+
+        <div class="warehouse-item">
+          <div class="warehouse-info">
+            <div class="warehouse-name">Tangier North</div>
+            <div class="warehouse-location">Zone Franche, Tangier</div>
+          </div>
+          <div class="warehouse-capacity">
+            <div class="capacity-bar">
+              <div class="capacity-fill" style="width: 45%"></div>
+            </div>
+            <div class="capacity-text">45% Full</div>
+          </div>
+        </div>
+
+        <div class="warehouse-item">
+          <div class="warehouse-info">
+            <div class="warehouse-name">Marrakech Storage</div>
+            <div class="warehouse-location">Sidi Ghanem, Marrakech</div>
+          </div>
+          <div class="warehouse-capacity">
+            <div class="capacity-bar">
+              <div class="capacity-fill" style="width: 89%"></div>
+            </div>
+            <div class="capacity-text">89% Full</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
