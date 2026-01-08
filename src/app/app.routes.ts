@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { Login } from './components/login/login';
-import { Home } from './components/home/home';
-import { Register } from './components/register/register';
-import { AdminDashboard } from './components/dashboard/admin/admin';
-import { ClientDashboard } from './components/dashboard/client/client';
-import { WarehouseManagerDashboard } from './components/dashboard/warehouse-manager/warehouse-manager';
+import { Login } from './features/auth/login/login';
+import { Home } from './features/home/home';
+import { Register } from './features/auth/register/register';
+import { AdminDashboard } from './features/dashboard/admin/admin';
+import { ClientDashboard } from './features/dashboard/client/client';
+import { WarehouseManagerDashboard } from './features/dashboard/warehouse-manager/warehouse-manager';
 
 export const routes: Routes = [
     {

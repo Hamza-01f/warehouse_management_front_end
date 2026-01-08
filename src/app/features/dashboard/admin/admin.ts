@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth-service';
-import { User } from '../../../model/user.model';
+import { User } from '../../../core/model/user.model';
 
 @Component({
   selector: 'app-admin',
