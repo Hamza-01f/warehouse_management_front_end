@@ -17,7 +17,7 @@ export class Login {
   password: string = '';
   message: string = '';
   loading: boolean = false;
-  isError: boolean = false;;
+  isError: boolean = false;
 
   constructor(
     private authService: AuthService ,
@@ -31,14 +31,35 @@ export class Login {
       this.isError = false;
 
       this.authService.login({
-        email: this.email ,
+         email: this.email ,
          password: this.password
         }).subscribe({
 
         next: (res) => {
-          localStorage.setItem('access_token' , res.token);
+          const user = res.data;
+          localStorage.setItem('access_token' , user.accessToken);
           this.message = 'You logged In with success ! ';
-          this.router.navigate(['/dashboard/admin'])
+
+          this.authService.setUser({
+              accessToken: user.accessToken,
+              expiresIn: user.expiresIn,
+              refreshToken: user.refreshToken,
+              firstName: user.firstName,
+              lastName: user.lastName,
+              role: user.role
+            });
+
+          if(user.role == 'ADMIN'){
+
+            this.router.navigate(['/dashboard/admin']);
+
+          }
+          if(user.role == 'WAREHOUSE_MANAGER' ){
+            this.router.navigate(['/dashboard/manager']);
+          }
+          if(user.role == 'CLIENT'){
+            this.router.navigate(['/dashboard/client']);
+          }
         },
 
         error: () => {
