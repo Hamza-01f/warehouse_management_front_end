@@ -23,6 +23,10 @@ export class AuthService{
     return this.http.post<ApiResponse<LoginResponse>>(this.LOGIN_URL, request);
   }
 
+  getRole(){
+     return this.getUser()?.role;
+  }
+
   logout(){
      localStorage.clear();
      this.userSubject.next(null);
@@ -36,16 +40,25 @@ export class AuthService{
       return this.http.post<RegisterResponse>(this.REGISTER_URL , register)
   }
 
-  setUser(response: LoginResponse){
-      this.userSubject.next(response);
+setUser(response: LoginResponse) {
+  this.userSubject.next(response);
+  localStorage.setItem('user', JSON.stringify(response));
+}
+
+getUser(): LoginResponse | null {
+  if (this.userSubject.value) {
+    return this.userSubject.value;
   }
 
-  getUser(): LoginResponse | null{
-     if(this.userSubject.value){
-      return this.userSubject.value;
-     }
-     return null;
+  const user = localStorage.getItem('user');
+  if (user) {
+    const parsed = JSON.parse(user);
+    this.userSubject.next(parsed);
+    return parsed;
   }
+
+  return null;
+}
 
 
 }

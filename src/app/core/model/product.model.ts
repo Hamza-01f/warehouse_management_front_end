@@ -3,4 +3,6 @@ export interface Product{
      image: string;
      price: number;
      unit: string;
+     stock?: number;
+     isActive: boolean;
 }
