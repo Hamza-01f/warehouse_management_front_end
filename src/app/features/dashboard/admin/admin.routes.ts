@@ -22,7 +22,7 @@ export const adminRoutes: Routes = [
                .then(m => m.Products)
         },
         {
-            path : 'warehouse',
+            path : 'warehouses',
             loadComponent : () => 
                 import('./children/warehouse/warehouse')
                 .then(m => m.Warehouse)

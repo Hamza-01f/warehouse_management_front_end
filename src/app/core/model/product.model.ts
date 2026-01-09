@@ -1,8 +1,9 @@
 export interface Product{
+     id?: number;
      name: string;
-     image: string;
+     image?: string;
      price: number;
      unit: string;
-     stock?: number;
-     isActive: boolean;
+     quantity: number;
+     isActive?: boolean;
 }
