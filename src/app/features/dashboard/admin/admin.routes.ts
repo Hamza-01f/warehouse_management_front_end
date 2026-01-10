@@ -1,7 +1,7 @@
 import { Routes } from "@angular/router";
 import { AdminDashboard} from "./admin";
 import { Products } from "./children/products/products";
-import { Warehouse } from "./children/warehouse/warehouse";
+import { WarehouseComponent } from "./children/warehouse/warehouse";
 
 
 export const adminRoutes: Routes = [
@@ -12,7 +12,7 @@ export const adminRoutes: Routes = [
         {
           path : '',
           loadComponent : () => 
-            import('./home/home')
+            import('./children/home/home')
             .then( m => m.AdminHome)
         },
         {
@@ -25,7 +25,7 @@ export const adminRoutes: Routes = [
             path : 'warehouses',
             loadComponent : () => 
                 import('./children/warehouse/warehouse')
-                .then(m => m.Warehouse)
+                .then(m => m.WarehouseComponent)
         }
      ]
     }
